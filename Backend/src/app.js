@@ -11,7 +11,7 @@ import { redirectToOriginalUrl } from "./controller/url.controller.js";
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://shortify11.netlify.app",
     credentials: true
 }));
 
