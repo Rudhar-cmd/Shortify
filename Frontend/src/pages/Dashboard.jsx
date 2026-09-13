@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import api from "../services/api";
+import api, { getShortUrl } from "../services/api";
 
 function Dashboard() {
 
@@ -23,11 +23,9 @@ function Dashboard() {
 
             const shortCode = response.data.url.shortCode;
 
-            setShortUrl(
-                `/api/v1/url/redirect/${shortCode}`
-            );
+            const shortUrl = getShortUrl(shortCode);
 
-            setOriginalUrl("");
+            setShortUrl(shortUrl);
 
         } catch (error) {
 
