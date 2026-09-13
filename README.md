@@ -58,60 +58,28 @@ Shortify/
 │       └── index.css
 │
 └── README.md
-API
-Method	Endpoint	Description
-POST	/api/v1/users/register	Register
-POST	/api/v1/users/login	Login
-POST	/api/v1/users/logout	Logout
-POST	/api/v1/url/shorten	Create short URL
-GET	/api/v1/url/my-urls	Get user's URLs
-PATCH	/api/v1/url/:id	Update URL
-DELETE	/api/v1/url/:id	Delete URL
-GET	/api/v1/analytics/:id	Get analytics
-GET	/:shortCode	Redirect to original URL
-Local Setup
-Backend
+## API
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/v1/users/register` | Register |
+| POST | `/api/v1/users/login` | Login |
+| POST | `/api/v1/users/logout` | Logout |
+| POST | `/api/v1/url/shorten` | Create short URL |
+| GET | `/api/v1/url/my-urls` | Get user's URLs |
+| PATCH | `/api/v1/url/:id` | Update URL |
+| DELETE | `/api/v1/url/:id` | Delete URL |
+| GET | `/api/v1/analytics/:id` | Get analytics |
+| GET | `/:shortCode` | Redirect to original URL |
+
+## Local Setup
+
+### Backend
+
+```bash
 cd Backend
 npm install
 npm run dev
-
-Create .env:
-
-MONGO_URL=your_mongodb_url
-PORT=5001
-ACCESS_TOKEN_SECRET=your_secret
-ACCESS_TOKEN_EXPIRY=1d
-REFRESH_TOKEN_SECRET=your_secret
-REFRESH_TOKEN_EXPIRY=7d
-Frontend
-cd Frontend
-npm install
-npm run dev
-
-Create .env:
-
-VITE_BACKEND_URL=http://localhost:5001
-Deployment
-
-Frontend: Netlify
-Backend: Render
-Database: MongoDB Atlas
-
-Future Improvements
-Custom aliases
-URL expiration
-QR code generation
-Redis caching
-Rate limiting
-Advanced analytics
-Geographic analytics
-Docker support
-Author
-
-Rudhar Gupta
-
-GitHub: Rudhar-cmd
-
 License
 
 This project is created for learning and portfolio purposes.
