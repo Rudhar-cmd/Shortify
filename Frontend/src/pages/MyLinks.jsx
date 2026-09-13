@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import api from "../services/api";
+import api, { getShortUrl } from "../services/api";
 
 function MyLinks() {
 
@@ -50,8 +50,7 @@ function MyLinks() {
 
     const copyUrl = async (shortCode) => {
 
-        const shortUrl =
-            `http://localhost:5001/api/v1/url/redirect/${shortCode}`;
+        const shortUrl = getShortUrl(shortCode);
 
         await navigator.clipboard.writeText(shortUrl);
 
@@ -107,8 +106,7 @@ function MyLinks() {
 
                         {urls.map((url) => {
 
-                            const shortUrl =
-                                `http://localhost:5001/api/v1/url/redirect/${url.shortCode}`;
+                            const shortUrl = getShortUrl(url.shortCode);
 
                             return (
                                 <div className="url-card" key={url._id}>
